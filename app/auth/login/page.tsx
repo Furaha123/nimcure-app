@@ -108,6 +108,13 @@ const Login = () => {
             priority
             sizes="50vw"
           />
+          <Image
+            src="/bird.svg"
+            alt="Login Image"
+            width={300}
+            height={300}
+            className=" absolute bottom-44 -left-20"
+          />
           <div className="relative h-full p-8 flex flex-col justify-end font-gilroy mt-4">
             <div className="space-y-4 max-w-lg relative">
               <h3 className="text-2xl text-center text-[#FFFFFF] font-extrabold">

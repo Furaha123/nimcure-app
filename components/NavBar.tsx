@@ -64,7 +64,7 @@ const NavBar = () => {
                   key={item.name}
                   href={item.href}
                   className={`
-                    inline-flex items-center px-1 text-[16px] font-bold
+                    inline-flex items-center px-1 text-[14px] font-bold
                     relative h-16 font-gilroy
                     ${
                       isActive
