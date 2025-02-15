@@ -1,3 +1,3 @@
-import Login from "./Login";
 import CustomButton from "./CustomButton";
-export { Login, CustomButton };
+import NavBar from "./NavBar";
+export { CustomButton, NavBar };
