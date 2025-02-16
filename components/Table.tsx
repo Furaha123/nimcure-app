@@ -1,12 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { patients } from "@/app/data";
 import Pagination from "./Pagination";
 type Status = "completed" | "due&paid" | "assigned" | "due&unpaid";
-const Table = () => {
+const PatientTable = () => {
   const itemsPerPage = 10;
   const [currentPage, setCurrentPage] = useState(1);
+  const router = useRouter();
 
   const getStatusColor = (status: string): string => {
     const formattedStatus = status.toLowerCase();
@@ -41,6 +43,10 @@ const Table = () => {
       month: "long",
       year: "numeric",
     });
+  };
+
+  const handleViewPatient = (hospitalId: string) => {
+    router.push(`patient-details/${hospitalId}`);
   };
 
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -122,7 +128,10 @@ const Table = () => {
                     </span>
                   </td>
                   <td className="py-4 px-6 text-sm whitespace-nowrap">
-                    <button className="px-6 py-2 text-[#276DF7] border border-[#276DF799]">
+                    <button
+                      className="px-6 py-2 text-[#276DF7] border border-[#276DF799]"
+                      onClick={() => handleViewPatient(patient.hospital_id)}
+                    >
                       View
                     </button>
                   </td>
@@ -149,4 +158,4 @@ const Table = () => {
   );
 };
 
-export default Table;
+export default PatientTable;

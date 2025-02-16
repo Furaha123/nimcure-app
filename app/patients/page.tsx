@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../layout/page";
 import { CustomButton } from "@/components";
-import Table from "@/components/Table";
+import PatientTable from "@/components/Table";
 
 const Patients = () => {
   return (
@@ -19,7 +19,7 @@ const Patients = () => {
             </div>
           </div>
         </div>
-        <Table />
+        <PatientTable />
       </div>
     </>
   );

@@ -4,19 +4,36 @@
 
 @font-face {
   font-family: "Gilroy";
-  src: url("/fonts/Gilroy-Regular.woff2") format("woff2"),
-    url("/fonts/Gilroy-Regular.woff") format("woff");
+  src: url("/font/Gilroy-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Gilroy";
-  src: url("/fonts/Gilroy-Bold.woff2") format("woff2"),
-    url("/fonts/Gilroy-Bold.woff") format("woff");
+  src: url("/font/Gilroy-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("/font/Gilroy-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("/font/Gilroy-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+body {
+  font-family: "Gilroy", sans-serif;
+}
+
 
 :root {
   --background: #ffffff;
