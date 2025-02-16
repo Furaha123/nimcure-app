@@ -1,19 +1,23 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import { patients } from "@/app/data";
 import { Patient } from "@/types";
 import Layout from "@/app/layout/page";
 import { CustomButton } from "@/components";
 
-const PatientDetails = ({ params }: { params: { hospitalId: string } }) => {
+const PatientDetails = () => {
   const [patient, setPatient] = useState<Patient | null>(null);
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
+  const params = useParams();
+  const hospitalId = params?.hospitalId as string;
 
   useEffect(() => {
-    const decodedHospitalId = decodeURIComponent(params.hospitalId);
+    if (!hospitalId) return;
 
+    const decodedHospitalId = decodeURIComponent(hospitalId);
     const patientData = patients.find(
       (p) => p.hospital_id.toString() === decodedHospitalId
     ) as Patient | undefined;
@@ -26,7 +30,7 @@ const PatientDetails = ({ params }: { params: { hospitalId: string } }) => {
     } else {
       setPatient(null);
     }
-  }, [params.hospitalId]);
+  }, [hospitalId]);
 
   const getStatusColor = (status: string): string => {
     const formattedStatus = status.toLowerCase();
