@@ -13,7 +13,7 @@ const NavBar = () => {
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const navItems = [
     { name: "Overview", icon: "/overview.svg", href: "/home" },
-    { name: "Deliveries", icon: "/deliveries.svg", href: "/not-found" },
+    { name: "Deliveries", icon: "/deliveries.svg", href: "/deliveries" },
     { name: "Patients", icon: "/patients.svg", href: "/patients" },
     {
       name: "Dispatch Riders",
